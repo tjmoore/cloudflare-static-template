@@ -1,0 +1,19 @@
+{
+  "name": "cloudflare-static-template",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "generate": "npm run build && node dist/src/generate.js",
+    "deploy": "npm run generate && wrangler deploy && node dist/src/generate.js --cleanup",
+    "dev": "wrangler dev"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0",
+    "@types/node": "^24",
+    "typescript": "^7.0.0"
+  }
+}
